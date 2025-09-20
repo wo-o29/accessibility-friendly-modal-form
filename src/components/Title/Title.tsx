@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
 import Polymorphic from "../Polymorphic/Polymorphic";
-import type { ElementType, PropsWithChildren } from "react";
+import type { ComponentProps, ElementType, PropsWithChildren } from "react";
 
-interface TitleProps<T extends ElementType> {
+type TitleProps<T extends ElementType> = ComponentProps<T> & {
   as?: T;
-}
+};
 
 function Title<T extends ElementType>({
   as,
