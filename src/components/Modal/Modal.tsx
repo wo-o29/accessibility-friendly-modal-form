@@ -3,6 +3,7 @@ import { useKeyDown } from "../../hooks/useKeyDown/useKeyDown";
 import { useLockBodyScroll } from "../../hooks/useLockBodyScroll/useLockBodyScroll";
 import { useOutsideClick } from "../../hooks/useOutsideClick/useOutsideClick";
 import styled from "@emotion/styled";
+import { keyframes } from "@emotion/react";
 
 interface ModalProps {
   isOpen: boolean;
@@ -16,14 +17,28 @@ function Modal({ isOpen, onCancel, children }: PropsWithChildren<ModalProps>) {
   });
   const addToSafeZone = useOutsideClick(onCancel);
 
+  if (!isOpen) {
+    return null;
+  }
+
   return (
-    <SModalBackdrop>
+    <SModalBackdrop
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modal-title"
+      aria-describedby="modal-description"
+    >
       <div ref={addToSafeZone}>{children}</div>
     </SModalBackdrop>
   );
 }
 
 export default Modal;
+
+const fadeIn = keyframes`
+  from { opacity: 0; }
+  to { opacity: 1; }
+`;
 
 const SModalBackdrop = styled.div`
   position: fixed;
@@ -35,4 +50,9 @@ const SModalBackdrop = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  animation: ${fadeIn} 0.3s ease forwards;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none !important;
+  }
 `;
