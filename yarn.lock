@@ -370,6 +370,11 @@ nanoid@^3.3.11:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.11.tgz#4f4f112cefbe303202f2199838128936266d185b"
   integrity sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==
 
+overlay-kit@^1.8.5:
+  version "1.8.5"
+  resolved "https://registry.yarnpkg.com/overlay-kit/-/overlay-kit-1.8.5.tgz#9972c7213794c9f5c60056b54f1e7c6fe90f19cb"
+  integrity sha512-BNtfOsfMNzo22x+uMNtV8nix53VTbA0XMENtwdvaEUmtXCjUE6go2xK4XSlNnSGyQfmB6c04uUCuFQtS5ZAAEQ==
+
 picocolors@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.1.1.tgz#3d321af3eab939b083c8f929a1d12cda81c26b6b"
